@@ -1,0 +1,46 @@
+{
+  "page_home": {
+    "title": "Base server-side rendering application",
+    "documentation": "Documentation",
+    "view_code": "View code",
+    "figma_title": "Design project in Figma",
+    "feature": {
+      "seo": {
+        "title": "SEO friendly",
+        "description": "Enhancing SEO by unhead"
+      },
+      "i18n": {
+        "title": "Internationalization",
+        "description": "I18n ready"
+      },
+      "store": {
+        "title": "Store",
+        "description": "State Management via Pinia"
+      },
+      "router": {
+        "title": "File-Based Routing",
+        "description": "Auto-generating typed routes"
+      },
+      "import": {
+        "title": "Auto-importing",
+        "description": "APIs, Components, Icons"
+      },
+      "pwa": {
+        "title": "PWA",
+        "description": "Configuration ready"
+      },
+      "class": {
+        "title": "Class-based approach",
+        "description": "Via class-transformer"
+      },
+      "ts": {
+        "title": "Type Strong",
+        "description": "Written in TypeScript"
+      },
+      "vite": {
+        "title": "Vue & Vite",
+        "description": "Fastness with ESBuild"
+      }
+    }
+  }
+}

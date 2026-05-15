@@ -1,0 +1,9 @@
+@for $i from 1 through 6 {
+  h#{$i},
+  [data-heading-#{$i}] {
+    font-family: var(--hc-layout-font-family-hading);
+    font-size: var(--hc-font-heading-h#{$i});
+    font-weight: var(--hc-font-weight-bold);
+    line-height: var(--hc-line-height-tight);
+  }
+}

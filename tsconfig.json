@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "target": "ESNext",
+    "lib": [
+      "DOM",
+      "ESNext"
+    ],
+    "rootDir": ".",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "skipLibCheck": true,
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "strictPropertyInitialization": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/client",
+      "@intlify/unplugin-vue-i18n/messages"
+    ],
+    "paths": {
+      "~/server/*": [
+        "./src/server/*"
+      ],
+      "~/*": [
+        "./src/client/*"
+      ]
+    }
+  },
+  "vueCompilerOptions": {
+    "plugins": [
+      "vue-router/volar/sfc-typed-router",
+      "vue-router/volar/sfc-route-blocks",
+    ],
+  },
+  "exclude": [
+    "dist"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.vue",
+    "eslint.config.js",
+    ".stylelintrc.js",
+    "src/client/types/typed-router.d.ts",
+    "src/client/types/user-modules.d.ts",
+    "src/sw.js"
+  ]
+}

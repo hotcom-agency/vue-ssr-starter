@@ -1,0 +1,46 @@
+{
+  "page_home": {
+    "title": "Шаблон для создания SSR приложения",
+    "documentation": "Документация",
+    "view_code": "Код проекта",
+    "figma_title": "Дизайн макет в Figma",
+    "feature": {
+      "seo": {
+        "title": "Поддержка SEO",
+        "description": "Метатеги, микроразметка и прочее с помощью unhead"
+      },
+      "i18n": {
+        "title": "Локализация",
+        "description": "Поддержка мультиязычности i18n"
+      },
+      "store": {
+        "title": "Хранилище",
+        "description": "Управление состоянием: Pinia & Pinia Colada"
+      },
+      "router": {
+        "title": "Маршрутизация",
+        "description": "Генерация путей на основе файлов"
+      },
+      "import": {
+        "title": "Автоимпорт",
+        "description": "API, компоненты, иконки"
+      },
+      "pwa": {
+        "title": "PWA",
+        "description": "Готовая конфигурация"
+      },
+      "class": {
+        "title": "Объектно-ориентированный подход",
+        "description": "С помощью class-transformer"
+      },
+      "ts": {
+        "title": "Типизация",
+        "description": "Написано на TypeScript"
+      },
+      "vite": {
+        "title": "Vue & Vite",
+        "description": "Высокая скорость благодаря ESBuild"
+      }
+    }
+  }
+}

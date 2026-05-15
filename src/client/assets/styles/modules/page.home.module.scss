@@ -1,0 +1,244 @@
+.section-header {
+  @include container-preset;
+
+  position: relative;
+  display: grid;
+  flex-grow: 1;
+  grid-template-areas: 'logo' 'content';
+  gap: var(--hc-spacing-element-lg);
+  justify-content: center;
+  text-align: center;
+
+  @include mq-min-tablet {
+    grid-template-areas: 'content logo';
+    grid-template-columns: 1fr minmax(100px, 250px);
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  @include mq-min-desktop {
+    grid-template-columns: 1fr minmax(100px, 420px);
+  }
+}
+
+.section-header__content {
+  display: flex;
+  flex-direction: column;
+  grid-area: content;
+  row-gap: var(--hc-spacing-element-xl);
+}
+
+.section-header__title {
+  position: relative;
+
+  [data-title-primary] {
+    color: var(--hc-layout-color-primary);
+  }
+}
+
+.section-header__logo {
+  position: relative;
+  grid-area: logo;
+  justify-self: center;
+  font-size: rem(70px);
+  color: var(--hc-layout-color-primary);
+
+  @include mq-min-tablet {
+    font-size: rem(80px);
+  }
+
+  @include mq-min-desktop {
+    padding-top: var(--hc-spacing-element-xs);
+    padding-left: var(--hc-spacing-element-xxl);
+    font-size: rem(100px);
+  }
+
+  &::after {
+    @include theme-dark {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      z-index: -1;
+      display: block;
+      width: 100vw;
+      max-height: 100vh;
+      aspect-ratio: 1/1;
+      content: '';
+      background: radial-gradient(var(--hc-color-layout-primary-light), transparent 50%);
+      opacity: 0.1;
+      transform: translate3d(50%, calc(var(--hc-spacing-section-base) * -1), 0.001rem) scale(1.5);
+
+      @include mq-min-tablet {
+        min-height: 65rem;
+        transform: translate3d(50%, calc(-50% - var(--hc-spacing-section-base)), 0.001rem) scale(1.5);
+      }
+
+      @include mq-min-tablet {
+        right: 25%;
+      }
+    }
+
+    @include theme-light {
+      position: absolute;
+      top: -3.5rem;
+      left: calc(50%);
+      display: block;
+      width: 20rem;
+      aspect-ratio: 1/1;
+      content: '';
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='100%' height='auto' viewBox='0 0 294 280' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.04' d='M140.732 1.90991C144.237 -0.636529 148.983 -0.636526 152.488 1.90991L289.097 101.162C292.602 103.709 294.068 108.222 292.729 112.343L240.549 272.936C239.211 277.056 235.371 279.846 231.039 279.846H62.1807C57.8484 279.846 54.0088 277.056 52.6701 272.936L0.490058 112.343C-0.848685 108.222 0.617897 103.709 4.12277 101.162L140.732 1.90991Z' fill='url(%23paint0_linear_4290_18662)'/%3e%3cdefs%3e%3clinearGradient id='paint0_linear_4290_18662' x1='146.61' y1='-2.3606' x2='146.61' y2='309.639' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='%23121114'/%3e%3cstop offset='1' stop-color='%23121114' stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e ");
+      background-repeat: no-repeat;
+      background-size: contain;
+      transform: translateX(-50%);
+
+      @include mq-min-desktop {
+        left: calc(50% + var(--hc-spacing-element-xxl) / 2);
+      }
+    }
+  }
+}
+
+.section-header__links {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hc-spacing-element-base) var(--hc-spacing-element-sm);
+  align-items: center;
+  justify-content: center;
+
+  @include mq-min-tablet {
+    justify-content: flex-start;
+  }
+}
+
+.section-features {
+  @include container-preset;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(280px, 30%), 1fr));
+  gap: var(--hc-spacing-element-sm);
+
+
+  @include mq-min-tablet {
+    grid-template-columns: repeat(auto-fit, minmax(max(330px, 30%), 1fr));
+  }
+}
+
+.section-features__item {
+  position: relative;
+  display: flex;
+}
+
+.section-figma {
+  position: relative;
+
+
+  @include container-preset;
+}
+
+.section-figma__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-spacing-element-md);
+  align-items: center;
+  justify-content: center;
+  padding: var(--hc-spacing-element-lg);
+  overflow: hidden;
+  border-radius: var(--hc-border-radius-base);
+  box-shadow: -1px -1px 1px 0 color-mix(in sRGB, var(--hc-layout-color-delimiter) 50%, transparent);
+
+  @include mq-min-tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &:hover {
+    &::before {
+      transform: translate3d(-80%, -90%, 0.001rem) rotate(-22deg) scale(2.5);
+
+      @include mq-min-tablet {
+        transform: translate3d(-90%, -90%, 0.001rem) rotate(-10deg) scale(2);
+      }
+    }
+
+    &::after {
+      transform: translate3d(-20%, -50%, 0.001rem) rotate(-22deg) scale(2.5);
+
+      @include mq-min-tablet {
+        transform: translate3d(0%, -40%, 0.001rem) rotate(5deg) scale(2);
+      }
+    }
+  }
+
+  &::before, &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    min-height: 10rem;
+    aspect-ratio: 4/2;
+    content: '';
+    border-radius: 100% ;
+    opacity: 0.15;
+    transition-duration: 1000ms;
+    transition-property: transform;
+
+    @include mq-min-tablet {
+      width: 60%;
+    }
+  }
+
+  &::before {
+    background: radial-gradient(#12E6C8, transparent 50%);
+    transform: translate3d(-50%, -120%, 0.001rem) rotate(-22deg) scale(2);
+
+    @include mq-min-tablet {
+      transform: translate3d(-80%, -75%, 0.001rem) rotate(0deg) scale(1.5);
+    }
+  }
+
+  &::after {
+    background: radial-gradient(#A287F4, transparent 50%);
+    transform: translate3d(-50%, 0%, 0.001rem) rotate(-22deg) scale(2);
+
+    @include mq-min-tablet {
+      transform: translate3d(-10%, -15%, 0.001rem) rotate(0deg) scale(1.5);
+    }
+  }
+}
+
+.section-figma__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-spacing-element-md);
+  align-items: center;
+  text-align: center;
+
+  @include mq-min-tablet {
+    flex-direction: row;
+  }
+}
+
+.section-figma__grid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  width: 10rem;
+  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg width='130' height='130' viewBox='0 0 130 130' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' fill-rule='evenodd' clip-rule='evenodd' d='M124.15 0H122.85V5.85H111.15V0H109.85V5.85H98.15V0H96.85V5.85H85.15V0H83.85V5.85H72.15V0H70.85V5.85H59.15V0H57.85V5.85H46.15V0H44.85V5.85H33.15V0H31.85V5.85H20.15V0H18.85V5.85H7.15V0H5.85V5.85H0V7.15H5.85V18.85H0V20.15H5.85V31.85H0V33.15H5.85V44.85H0V46.15H5.85V57.85H0V59.15H5.85V70.85H0V72.15H5.85V83.85H0V85.15H5.85V96.85H0V98.15H5.85V109.85H0V111.15H5.85V122.85H0V124.15H5.85V130H7.15V124.15H18.85V130H20.15V124.15H31.85V130H33.15V124.15H44.85V130H46.15V124.15H57.85V130H59.15V124.15H70.85V130H72.15V124.15H83.85V130H85.15V124.15H96.85V130H98.15V124.15H109.85V130H111.15V124.15H122.85V130H124.15V124.15H130V122.85H124.15V111.15H130V109.85H124.15V98.15H130V96.85H124.15V85.15H130V83.85H124.15V72.15H130V70.85H124.15V59.15H130V57.85H124.15V46.15H130V44.85H124.15V33.15H130V31.85H124.15V20.15H130V18.85H124.15V7.15H130V5.85H124.15V0ZM111.15 18.85H122.85V7.15H111.15V18.85ZM111.15 31.85H122.85V20.15H111.15V31.85ZM111.15 44.85H122.85V33.15H111.15V44.85ZM111.15 57.85H122.85V46.15H111.15V57.85ZM111.15 70.85H122.85V59.15H111.15V70.85ZM111.15 83.85H122.85V72.15H111.15V83.85ZM111.15 96.85H122.85V85.15H111.15V96.85ZM111.15 109.85H122.85V98.15H111.15V109.85ZM111.15 122.85H122.85V111.15H111.15V122.85ZM18.85 111.15H7.15V122.85H18.85V111.15ZM18.85 98.15H7.15V109.85H18.85V98.15ZM18.85 85.15H7.15V96.85H18.85V85.15ZM18.85 72.15H7.15V83.85H18.85V72.15ZM18.85 59.15H7.15V70.85H18.85V59.15ZM18.85 46.15H7.15V57.85H18.85V46.15ZM18.85 33.15H7.15V44.85H18.85V33.15ZM18.85 20.15H7.15V31.85H18.85V20.15ZM18.85 7.15H7.15V18.85H18.85V7.15ZM98.15 18.85H109.85V7.15H98.15V18.85ZM98.15 31.85H109.85V20.15H98.15V31.85ZM98.15 44.85H109.85V33.15H98.15V44.85ZM98.15 57.85H109.85V46.15H98.15V57.85ZM98.15 70.85H109.85V59.15H98.15V70.85ZM98.15 83.85H109.85V72.15H98.15V83.85ZM98.15 96.85H109.85V85.15H98.15V96.85ZM98.15 109.85H109.85V98.15H98.15V109.85ZM31.85 98.15H20.15V109.85H31.85V98.15ZM31.85 85.15H20.15V96.85H31.85V85.15ZM31.85 72.15H20.15V83.85H31.85V72.15ZM31.85 59.15H20.15V70.85H31.85V59.15ZM31.85 46.15H20.15V57.85H31.85V46.15ZM31.85 33.15H20.15V44.85H31.85V33.15ZM31.85 20.15H20.15V31.85H31.85V20.15ZM85.15 31.85H96.85V20.15H85.15V31.85ZM85.15 44.85H96.85V33.15H85.15V44.85ZM85.15 57.85H96.85V46.15H85.15V57.85ZM85.15 70.85H96.85V59.15H85.15V70.85ZM85.15 83.85H96.85V72.15H85.15V83.85ZM85.15 96.85H96.85V85.15H85.15V96.85ZM44.85 85.15H33.15V96.85H44.85V85.15ZM44.85 72.15H33.15V83.85H44.85V72.15ZM44.85 59.15H33.15V70.85H44.85V59.15ZM44.85 46.15H33.15V57.85H44.85V46.15ZM44.85 33.15H33.15V44.85H44.85V33.15ZM72.15 44.85H83.85V33.15H72.15V44.85ZM72.15 57.85H83.85V46.15H72.15V57.85ZM72.15 70.85H83.85V59.15H72.15V70.85ZM72.15 83.85H83.85V72.15H72.15V83.85ZM57.85 72.15H46.15V83.85H57.85V72.15ZM57.85 59.15H46.15V70.85H57.85V59.15ZM57.85 46.15H46.15V57.85H57.85V46.15ZM59.15 57.85H70.85V46.15H59.15V57.85ZM59.15 70.85H70.85V59.15H59.15V70.85ZM70.85 72.15H59.15V83.85H70.85V72.15ZM59.15 44.85H70.85V33.15H59.15V44.85ZM46.15 44.85H57.85V33.15H46.15V44.85ZM57.85 85.15H46.15V96.85H57.85V85.15ZM70.85 85.15H59.15V96.85H70.85V85.15ZM83.85 85.15H72.15V96.85H83.85V85.15ZM72.15 31.85H83.85V20.15H72.15V31.85ZM59.15 31.85H70.85V20.15H59.15V31.85ZM46.15 31.85H57.85V20.15H46.15V31.85ZM33.15 31.85H44.85V20.15H33.15V31.85ZM44.85 98.15H33.15V109.85H44.85V98.15ZM57.85 98.15H46.15V109.85H57.85V98.15ZM70.85 98.15H59.15V109.85H70.85V98.15ZM83.85 98.15H72.15V109.85H83.85V98.15ZM96.85 98.15H85.15V109.85H96.85V98.15ZM85.15 18.85H96.85V7.15H85.15V18.85ZM72.15 18.85H83.85V7.15H72.15V18.85ZM59.15 18.85H70.85V7.15H59.15V18.85ZM46.15 18.85H57.85V7.15H46.15V18.85ZM33.15 18.85H44.85V7.15H33.15V18.85ZM20.15 18.85H31.85V7.15H20.15V18.85ZM31.85 111.15H20.15V122.85H31.85V111.15ZM44.85 111.15H33.15V122.85H44.85V111.15ZM57.85 111.15H46.15V122.85H57.85V111.15ZM70.85 111.15H59.15V122.85H70.85V111.15ZM83.85 111.15H72.15V122.85H83.85V111.15ZM96.85 111.15H85.15V122.85H96.85V111.15ZM109.85 111.15H98.15V122.85H109.85V111.15Z' fill='url(%23paint0_radial_4122_6629)'/%3E%3Cdefs%3E%3CradialGradient id='paint0_radial_4122_6629' cx='0' cy='0' r='1' gradientUnits='userSpaceOnUse' gradientTransform='translate(65 65) rotate(90) scale(65)'%3E%3Cstop stop-color='%237C7781'/%3E%3Cstop offset='1' stop-color='%237C7781' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include mq-min-tablet {
+    left: var(--hc-spacing-element-xl);
+  }
+}
+
+.section-figma__icon {
+  font-size: rem(38px);
+}

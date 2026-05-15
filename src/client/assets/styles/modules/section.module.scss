@@ -1,0 +1,20 @@
+.section {
+  --hc-section-offset: var(--hc-spacing-section-base);
+
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding-top: var(--hc-section-offset);
+
+  &--offset-small {
+    --hc-section-offset: var(--hc-spacing-section-xs);
+  }
+
+  &--offset-none {
+    --hc-section-offset: 0;
+  }
+
+  &--container {
+    @include container-preset;
+  }
+}

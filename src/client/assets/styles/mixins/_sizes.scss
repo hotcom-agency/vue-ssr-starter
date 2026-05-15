@@ -1,0 +1,33 @@
+@use "sass:math";
+@use "sass:list";
+
+@function rem($values) {
+  $px: ();
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $px: list.append($px, $value);
+      $rem: list.append($rem, $value);
+    } @else {
+      $unit: math.unit($value); 
+      $val: math.div($value, $value * 0 + 1);
+
+      @if $unit == 'px' {
+        $px: list.append($px, $value);
+        $rem: list.append($rem, (calc($val / 16) + rem));
+      }
+
+      @if $unit == 'rem' {
+        $px: list.append($px, ($val * 16 + px));
+        $rem: list.append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    @return $px;
+  } @else {
+    @return $rem;
+  }
+}

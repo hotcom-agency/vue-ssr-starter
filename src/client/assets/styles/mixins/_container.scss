@@ -1,0 +1,20 @@
+@mixin -container() {
+  flex-basis: 100%;
+  width: 100%;
+  padding-right: var(--hc-layout-container-padding);
+  padding-left: var(--hc-layout-container-padding);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin container-preset {
+  @include -container;
+
+  max-width: var(--hc-layout-container-max-width);
+}
+
+@mixin container-wide-preset {
+  @include -container;
+
+  max-width: var(--hc-layout-container-wide-max-width);
+}

@@ -1,0 +1,93 @@
+@use '../mixins/manifest' as *;
+
+:root {
+  // Layout
+  --hc-layout-font-family: 'Roboto', sans-serif;
+  --hc-layout-font-family-hading: var(--hc-layout-font-family);
+  --hc-layout-color-background: light-dark(var(--hc-color-layout-light-main), var(--hc-color-layout-dark-main));
+  --hc-layout-color-text: light-dark( var(--hc-color-layout-dark-additional), var(--hc-color-layout-light-main));
+  --hc-layout-color-primary: light-dark( var(--hc-color-layout-primary-dark), var(--hc-color-layout-primary-light));
+  --hc-layout-color-delimiter: #7c778126;
+  --hc-layout-container-padding: #{rem(15px)};
+  --hc-layout-container-max-width: #{rem(500px)};
+  --hc-layout-container-wide-max-width: #{rem(1180px)};
+  --hc-layout-wrapper-max-width: #{rem(2560px)};
+  --hc-layout-grid-gap-base: #{rem(10px)};
+
+  @include mq-min-tablet {
+    --hc-layout-container-max-width: #{rem(880px)};
+    --hc-layout-container-padding: #{rem(40px)};
+  }
+
+  @include mq-min-desktop {
+    --hc-layout-container-max-width: #{rem(1180px)};
+  }
+
+  // Preset layout colors
+  --hc-color-layout-light-main: #fff;
+  --hc-color-layout-light-additional: #f7f7f7;
+  --hc-color-layout-dark-main: #121114;
+  --hc-color-layout-dark-additional: #17151a;
+  --hc-color-layout-middle-main: #7c7781;
+  --hc-color-layout-primary-light: #d9baff;
+  --hc-color-layout-primary-dark: #8032c4;
+
+  // Preset font size
+  --hc-font-size-base: #{rem(16px)};
+  --hc-font-size-xs: calc(var(--hc-font-size-base) * .9);
+  --hc-font-heading-h1: #{rem(32px)};
+  --hc-font-heading-h2: #{rem(28px)};
+  --hc-font-heading-h3: #{rem(25px)};
+  --hc-font-heading-h4: #{rem(25px)};
+  --hc-font-heading-h5: #{rem(24px)};
+  --hc-font-heading-h6: #{rem(22px)};
+
+  @include mq-min-tablet {
+    --hc-font-heading-h1: #{rem(42px)};
+    --hc-font-heading-h2: #{rem(40px)};
+    --hc-font-heading-h3: #{rem(36px)};
+    --hc-font-heading-h4: #{rem(32px)};
+    --hc-font-heading-h5: #{rem(28px)};
+    --hc-font-heading-h6: #{rem(24px)};
+  }
+
+  @include mq-min-desktop {
+    --hc-font-size-base: #{rem(17px)};
+    --hc-font-heading-h1: #{rem(48px)};
+    --hc-font-heading-h2: #{rem(44px)};
+  }
+
+  // Preset font weight
+  --hc-font-weight-thin: 300;
+  --hc-font-weight-base: 400;
+  --hc-font-weight-medium: 500;
+  --hc-font-weight-bold: 600;
+  --hc-font-weight-extra-bold: 700;
+
+  // Preset line height
+  --hc-line-height-none: 1;
+  --hc-line-height-tight: 1.2;
+  --hc-line-height-snug: 1.35;
+  --hc-line-height-normal: 1.5;
+  --hc-line-height-relaxed: 1.625;
+
+  // Preset border-radius
+  --hc-border-radius-base: #{rem(10px)};
+  --hc-border-radius-xs: #{rem(5px)};
+
+  // Preset spacing
+  --hc-spacing-section-base: #{rem(60px)};
+  --hc-spacing-section-xs: #{rem(30px)};
+  --hc-spacing-element-base: #{rem(10px)};
+  --hc-spacing-element-xs: #{rem(5px)};
+  --hc-spacing-element-sm: #{rem(15px)};
+  --hc-spacing-element-md: #{rem(20px)};
+  --hc-spacing-element-lg: #{rem(30px)};
+  --hc-spacing-element-xl: #{rem(40px)};
+  --hc-spacing-element-xxl: #{rem(50px)};
+
+  @include mq-min-desktop {
+    --hc-spacing-section-base: #{rem(90px)};
+    --hc-spacing-section-xs: #{rem(45px)};
+  }
+}

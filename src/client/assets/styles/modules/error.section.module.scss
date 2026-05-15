@@ -1,0 +1,42 @@
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: var(--hc-spacing-element-xl) var(--hc-layout-container-padding);
+
+  &__content {
+    text-align: center;
+
+    @include container-preset;
+
+    @include mq-min-tablet {
+      padding-top: var(--hc-spacing-element-xl);
+      padding-bottom: var(--hc-spacing-element-xl);
+    }
+  }
+
+  &__title {
+    margin-bottom: var(--hc-spacing-element-lg);
+    font-size: var(--hc-font-heading-h1);
+    font-weight: var(--hc-font-weight-bold);
+    line-height: var(--hc-line-height-tight);
+    text-align: center;
+
+    @include mq-min-tablet {
+      font-size: calc(var(--hc-font-heading-h1) * 1.2);
+    }
+  }
+
+  &__message {
+    margin-bottom: var(--hc-spacing-element-xl);
+    font-size: var(--hc-font-size-base);
+    line-height: var(--hc-line-height-normal);
+
+    @include mq-min-tablet {
+      font-size: calc(var(--hc-font-size-base) * 1.1);
+    }
+  }
+}

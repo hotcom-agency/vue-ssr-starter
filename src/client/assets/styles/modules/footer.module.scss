@@ -1,0 +1,24 @@
+.footer {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  padding-top: var(--hc-spacing-section-base);
+  margin-top: auto;
+
+  @include container-preset;
+}
+
+.footer__content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--hc-spacing-element-base);
+  justify-content: space-between;
+  width: 100%;
+  padding-block: var(--hc-spacing-element-lg);
+  font-size: var(--hc-font-size-xs);
+  color: var(--hc-color-layout-middle-main);
+  text-align: center;
+  border-top: 1px solid var(--hc-layout-color-delimiter);
+}

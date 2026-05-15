@@ -1,0 +1,75 @@
+@use "sass:meta";
+@use "sass:list";
+@use "sass:map";
+
+@mixin mq($min: 0, $max: 0) {
+  $known-breakpoints: mobile, tablet, desktop;
+
+  @if not list.index($known-breakpoints, $min) and meta.type-of($min) != number {
+    @error "Unknown breakpoint #{$min}.";
+  }
+
+  @if not list.index($known-breakpoints, $max) and meta.type-of($max) != number {
+    @error "Unknown breakpoint #{$max}.";
+  }
+
+  $query: "all";
+  $min-value: 0;
+  $max-value: 0;
+  $min-breakpoints: (
+    tablet: 768px,
+    desktop: 1180px,
+  );
+  $max-breakpoints: (
+    mobile: 767.98px,
+    tablet: 1079.98px
+  );
+
+  @if meta.type-of($min) == string {
+    $min-value: map.get($min-breakpoints, $min);
+  } @else if meta.type-of($min) == number {
+    $min-value: #{$min}px;
+  }
+
+  @if meta.type-of($max) == string {
+    $max-value: map.get($max-breakpoints, $max);
+  } @else if meta.type-of($max) == number {
+    $max-value: #{$max}px;
+  }
+
+  @if $max == 0 {
+    $query: "(min-width: #{$min-value})";
+  } @else if $min == 0 {
+    $query: "(max-width: #{$max-value})";
+  } @else {
+    $query: "(min-width: #{$min-value}) and (max-width: #{$max-value})";
+  }
+
+  @media #{$query} {
+    @content;
+  }
+}
+
+@mixin mq-min-tablet {
+  @include mq("tablet") {
+    @content;
+  }
+}
+
+@mixin mq-min-desktop {
+  @include mq("desktop") {
+    @content;
+  }
+}
+
+@mixin mq-max-mobile {
+  @include mq($max: "mobile") {
+    @content;
+  }
+}
+
+@mixin mq-max-tablet {
+  @include mq($max: "tablet") {
+    @content;
+  }
+}

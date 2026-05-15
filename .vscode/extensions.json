@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "vunguyentuan.vscode-css-variables",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "dbaeumer.vscode-eslint",
+    "lokalise.i18n-ally",
+    "xabikos.javascriptsnippets",
+    "mrmlnc.vscode-scss",
+    "vue.volar",
+    "editorconfig.editorconfig"
+  ]
+}

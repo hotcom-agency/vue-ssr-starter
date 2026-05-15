@@ -1,0 +1,11 @@
+{
+  "data": {
+    "id": 1,
+    "slug": "test-page",
+    "title": "Title",
+    "content": "Without diligence succeeding<br>In learning something and somehow<br>We, thanks to God, can flash with breeding,<br>It makes no difficulty now.",
+    "test": "Not a property of the Page class.",
+    "seo_title": "REST API test page",
+    "seo_description": "This is meta description REST API test page."
+  }
+}

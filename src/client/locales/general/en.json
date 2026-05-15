@@ -1,0 +1,34 @@
+{
+  "project": {
+    "name": "Vue SSR Starter",
+    "description": "Starter Vue + Vite (SSR)"
+  },
+  "pluralization": {
+    "pages": "0 pages | {count} page | {count} pages | {count} pages"
+  },
+  "error": {
+    "403": {
+      "title": "Access is restricted",
+      "description": "Access to this resource is limited"
+    },
+    "404": {
+      "title": "Page not found",
+      "description": "It looks like this page does not exist"
+    },
+    "429": {
+      "title": "Exceeded the number of requests",
+      "description": "Exceeded the number of requests. Please try again later."
+    },
+    "500": {
+      "title": "Service unavailable",
+      "description": "The site is temporarily unavailable, try refreshing the page."
+    },
+    "common": {
+      "title": "Unexpected error",
+      "description": "Try refreshing the page or going to the main page"
+    }
+  },
+  "misc": {
+    "homepage": "Home page"
+  }
+}

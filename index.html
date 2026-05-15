@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <!--app-preload-links-->
+</head>
+
+<body>
+  <!--app-teleports-->
+  <div id="app"><!--app-html--></div>
+  <script type="module" src="/src/client/entry-client.ts"></script>
+  <script>
+		window.__INITIAL_STATE__ = '<!--app-pinia-state-->';
+		window.__INITIAL_QUERY__ = '<!--app-pinia-query-->';
+	</script>
+</body>
+
+</html>

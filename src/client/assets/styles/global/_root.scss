@@ -1,0 +1,26 @@
+* {
+  appearance: none;
+}
+
+:root {
+  color-scheme: light dark;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &[data-color-scheme="light"] {
+    color-scheme: light;
+  }
+
+  &[data-color-scheme="dark"] {
+    color-scheme: dark;
+  }
+}
+
+body {
+  font-family: var(--hc-layout-font-family);
+  font-size: var(--hc-font-size-base);
+  font-weight: var(--hc-font-weight-base, '400');
+  line-height: var(--hc-line-height-normal, '1.2em');
+  color: var(--hc-layout-color-text);
+  background-color: var(--hc-layout-color-background);
+}
