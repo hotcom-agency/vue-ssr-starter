@@ -2,7 +2,7 @@ import { plainToInstance } from 'class-transformer'
 import { type Request } from 'express'
 import createHttpError from 'http-errors'
 import { Page } from '~/models/page'
-import { localeByRequest } from '~/server/composables/useHelpers'
+import { localeByRequest } from '~/server//utils/helpers'
 import pageEn from '~/server/test-data/test-page-en.json'
 import pageRu from '~/server/test-data/test-page-ru.json'
 

@@ -1,8 +1,8 @@
 import { type NextFunction, type Request, type Response } from 'express'
-import { ApiResponse } from '~/server/composables'
+import { apiResponse } from '~/server/utils/response'
 
 export const errorNotFound = (_req: Request, res: Response) => {
-  const response = ApiResponse(null, 404)
+  const response = apiResponse(null, 404)
 
   res.status(404).json(response)
 }
@@ -16,7 +16,7 @@ export const errorUnexpected = (
   let response = err ?? {}
 
   if (!(response).error) {
-    response = ApiResponse(null, res.statusCode === 200 ? 500 : res.statusCode)
+    response = apiResponse(null, res.statusCode === 200 ? 500 : res.statusCode)
   }
 
   res.status((response).error?.status ?? 500).json(response)

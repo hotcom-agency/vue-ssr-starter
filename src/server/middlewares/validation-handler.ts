@@ -1,7 +1,7 @@
 import { type NextFunction, type Request, type Response } from 'express'
 import { validationResult } from 'express-validator'
 import { type ValidationChain } from 'express-validator'
-import { ApiResponse } from '~/server/composables'
+import { apiResponse } from '~/server/utils/response'
 
 export default function (validations: ValidationChain[], code = 400) {
   return async (req: Request, res: Response, next: NextFunction) => {
@@ -15,7 +15,7 @@ export default function (validations: ValidationChain[], code = 400) {
       return
     }
 
-    const response = ApiResponse(null, code, errors.array())
+    const response = apiResponse(null, code, errors.array())
 
     res.status(response.error?.status ?? code).json(response)
   }

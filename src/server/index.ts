@@ -2,9 +2,10 @@ import cookies from 'cookie-parser'
 import cors from 'cors'
 import { config as configEnv } from 'dotenv'
 import express from 'express'
-import { isProduction, useSSR } from './composables'
+import { setupSSR } from './core/ssr'
 import { errorNotFound, errorUnexpected } from './middlewares/error-handler'
 import apiRoutesV1 from './routes/api.v1'
+import { isProduction } from './utils/helpers'
 
 configEnv()
 
@@ -22,7 +23,7 @@ const createServer = async () => {
   app.use('/api', apiRoutesV1, errorNotFound)
 
   // SSR with HMR
-  const hmr = await useSSR(app)
+  const hmr = await setupSSR(app)
 
   // Error handler
   app.use(errorUnexpected)

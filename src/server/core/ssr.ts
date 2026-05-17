@@ -8,9 +8,9 @@ import compression from 'compression'
 import { static as static_ } from 'express'
 import { type Express } from 'express'
 import { type ViteDevServer } from 'vite'
-import { isProduction } from './useHelpers'
+import { isProduction } from '~/server/utils/helpers'
 
-export const useSSR = async (app: Express) => {
+export const setupSSR = async (app: Express) => {
   let vite: ViteDevServer
   let hmrServer: Server | undefined = undefined
 
